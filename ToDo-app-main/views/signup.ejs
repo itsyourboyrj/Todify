@@ -1,0 +1,15 @@
+<%- include("header") -%>
+<div class="box" style="margin-top: 10%;">
+    
+    <form class="signin" action="/signup" method="post">
+        <div class="signinHeader">Sign Up</div>
+        <label class="signinItems">UserName</label>
+        <input class="signinItems input" name="username" placeholder="Enter Your Name" required="true">
+        <label class="signinItems">Password</label>
+        <input class="signinItems input"type="password"name="password" placeholder="Password">
+        <button class=signinbutton>Sign Up</button>
+        <small style="text-align: center; margin-bottom: 10%;">Already have a account? lets <a style="text-decoration: none;font-weight: 550"href="/signin">SignIn</a></small>
+    </form>
+</div>
+
+<%- include("footer") -%>

@@ -1,0 +1,44 @@
+<%- include("header") -%>
+    <div class="newList">
+        <form action="/addnewlist" method="post">
+           <!-- <input type="text" class="newListInput" name="listname" placeholder="New List">
+            <button class="newList-button">Create</button>-->
+        </form>
+       
+        <% if(listTitle == "Today"){ %>
+            <form action="/SignIn" method="get">
+                <button class="newList-button">Sign In</button>
+            </form>
+        <% }else{ %>
+            <form action="/" method="get">
+                <button class="newList-button">Logout</button>
+            </form>
+            
+        <% } %>
+        
+    </div>
+    <div class="box" id="heading">
+        <h1><%= listTitle %></h1> 
+    </div>
+    <div class="box">
+        <% newitem.forEach(function(item){ %>
+            <div class="item">
+                <input type="checkbox">
+                <p><%= item.name %></p>
+                <form class="right" action="/delete" method="post">
+                    <button type="submit" name="nameOfItem" value="<%= item.name %>" class="btn btn-red">✘</button>
+                    <input type="hidden" name="listName" value= "<%= listTitle %>"> 
+                    <input type="hidden" name="id" value= "<%= id %>">
+                </form>
+            </div>
+        <%})%>
+        <form class="item" action="/" method="post"> 
+            <input type="text" name="toDo" placeholder="New Item"> 
+            <button type="submit" name="list" value="<%= listTitle %>">+</button>
+            <input type="hidden" name="id" value= "<%= id %>">
+       </form>
+    </div>
+<%- include("footer") -%>
+
+</body>
+</html>

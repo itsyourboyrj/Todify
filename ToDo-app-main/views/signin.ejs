@@ -1,0 +1,18 @@
+<%- include("header") -%>
+<div class="box" Style= "margin-top: 10%"">
+    
+    <form class="signin" action="/signin" method="post">
+        <div class="signinHeader">Sign In<Input:color></Input:color></div>
+        <label class="signinItems">UserName</label>
+        <input class="signinItems input" name="username" placeholder="Enter Your Name" required="true">
+        <label class="signinItems">Password</label>
+        <input class="signinItems input"type="password"name="password" placeholder="Password">
+        <small style= "text-align: right;margin-right: 5%;"><a style="text-decoration: none" href="https://www.linkedin.com/in/atul-kumar-a585491bb/">forgot password?</a></small>
+        <button class=signinbutton>Sign In</button>
+        <small style="text-align: center; margin-bottom: 10%;">are you a new user? lets <a style="text-decoration: none;font-weight: 550;"href="/signup">SignUp</a></small>
+    </form>
+</div>
+
+
+
+<%- include("footer") -%>
